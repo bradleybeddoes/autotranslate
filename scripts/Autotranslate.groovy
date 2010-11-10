@@ -45,10 +45,14 @@ target(main: "Translates base properties files into configured languages") {
 	enTranslations.each { baseline ->
 		def keys = baseline.keys()
 		keys.each { key ->
-			def translatedText = Translate.execute(baseline.getProperty(key), Language.ENGLISH, languages)
-			translatedText?.eachWithIndex { translation, i ->
-				if(!translations[i].containsKey(key) || overwrite)
-					translations[i].put(key, translation)
+			def text = baseline.getProperty(key)
+			if(text) {
+				println "Translating: " + key
+				def translatedText = Translate.execute(text, Language.ENGLISH, languages)
+				translatedText?.eachWithIndex { translation, i ->
+					if(!translations[i].containsKey(key) || overwrite)
+						translations[i].put(key, translation)
+				}
 			}
 		}
 	}

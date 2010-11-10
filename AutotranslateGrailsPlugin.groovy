@@ -1,8 +1,8 @@
 class AutotranslateGrailsPlugin {
     // the plugin version
-    def version = "0.1"
+    def version = "0.2"
     // the version or versions of Grails the plugin is designed for
-    def grailsVersion = "1.3.5 > *"
+    def grailsVersion = "1.0 > *"
     // the other plugins this plugin depends on
     def dependsOn = [:]
     // resources that are excluded from plugin packaging
@@ -15,7 +15,7 @@ class AutotranslateGrailsPlugin {
     def authorEmail = "bradleybeddoes@gmail.com"
     def title = "Automatically Translate base english language files"
     def description = '''\\
-Takes a base set of (english) i18n properties files and for the configured languages utilizes Google Translate to automatically provide support (or at worst a decent starting point) for other languages.
+Takes a base set of (english) i18n properties files and for the configured languages utilizes Google Translate to automatically provide a decent starting point for other languages.
 '''
 
     // URL to the plugin's documentation

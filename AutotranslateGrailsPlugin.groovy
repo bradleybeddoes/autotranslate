@@ -1,6 +1,6 @@
 class AutotranslateGrailsPlugin {
     // the plugin version
-    def version = "0.2"
+    def version = "0.3"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.0 > *"
     // the other plugins this plugin depends on
@@ -10,7 +10,6 @@ class AutotranslateGrailsPlugin {
             "grails-app/views/error.gsp"
     ]
 
-    // TODO Fill in these fields
     def author = "Bradley Beddoes"
     def authorEmail = "bradleybeddoes@gmail.com"
     def title = "Automatically Translate base english language files"

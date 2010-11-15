@@ -36,7 +36,7 @@ target(main: "Translates base properties files into configured languages") {
 		if(!f.exists())
 			f.createNewFile()
 		
-		Properties prop = new Properties()
+		Properties prop = new SortedProperties()
 		FileInputStream inf = new FileInputStream(f)
 		prop.load(inf)
 		translations[i] = prop
@@ -94,4 +94,17 @@ private Language[] parseLanguages(langs) {
 private void usage() {
 	println "Usage:\n${USAGE}"
 	System.exit(1)
+}
+
+public class SortedProperties extends Properties {
+  @Override
+  public synchronized Enumeration keys() {
+     def keysEnum = super.keys()
+     def keyList = new Vector()
+     while(keysEnum.hasMoreElements()){
+		keyList.add(keysEnum.nextElement())
+     }
+     Collections.sort(keyList);
+     keyList.elements();
+  }
 }
